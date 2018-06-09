@@ -1,0 +1,17 @@
+export const GET_ERRORS = 'GET_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const CARD_LOADING = 'CARD_LOADING';
+export const CARDS_LOADING = 'CARDS_LOADING';
+export const GET_CARD = 'GET_CARD';
+export const SET_CARD = 'SET_CARD';
+export const SAVE_CARD = 'SAVE_CARD';
+export const DELETE_CARD = 'DELETE_CARD';
+export const GET_CARDS = 'GET_CARDS';
+export const CLEAR_CARD = 'CLEAR_CARD';
+export const CLEAR_CARDS = 'CLEAR_CARDS';
+export const INIT_PAGE = 'INIT_PAGE';
+export const ADD_PAGE = 'ADD_PAGE';
+export const DEL_PAGE = 'DEL_PAGE';
+export const NEXT_PAGE = 'NEXT_PAGE';
+export const PREV_PAGE = 'PREV_PAGE';

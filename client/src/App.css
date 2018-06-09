@@ -1,0 +1,311 @@
+body {
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.landing {
+  background: url('./img/landing_640.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 640px) {
+  .landing {
+    background: url('./img/landing_1920.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  width: 100%;
+}
+#main .login, #main .register, #main .landing, #main .dashboard {
+  padding-top: 54px;
+  height: 100vh;
+  width: 100%;
+}
+#main #displaywrap {
+  border-right: 0px;
+  border-left: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-style: solid;
+  border-color: skyblue;
+  height: 100vh;
+}
+@media (min-width: 992px) {
+  #main #displaywrap {
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-style: solid;
+    border-color: skyblue;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 992px) {
+  #main #palletewrap {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #ffffff;
+  }
+}
+
+@media (max-width: 992px) {
+  #main #palletewrap {
+    border-top-width: 2px;
+    border-top-color: #777;
+    border-top-style: solid;
+    position: fixed;
+    left: 0px;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    overflow: auto;
+  }
+  
+  .palletewrap-hidden {
+    top: 100vh;
+    transition: top 2s;
+  }
+  
+  .palletewrap-overlap {
+    top: 0;
+    transition: top 2s;
+  }
+  
+  #main #pallete-toggle {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .pallete-close {
+    position: fixed;
+    top: 93vh;
+    z-index: 1;
+    -webkit-animation: pong 0.7s infinite; /* Safari 4.0 - 8.0 */
+    animation: pong 0.7s infinite;
+  }
+  
+  .pallete-open {
+    position: fixed;
+    top: 0.5vh;
+    z-index: 3;
+    -webkit-animation-name: toggle; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: toggle;
+    animation-duration: 2s;
+  }
+
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes pong {
+    from {top: 95vh; opacity: 0.3}
+    to {top: 93vh; opacity: 1}
+  }
+  
+  /* Standard syntax */
+  @keyframes pong {
+    from {top: 95vh; opacity: 0.3}
+    to {top: 93vh; opacity: 1}
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes toggle {
+    from {top: -5vh;}
+    to {top: 0.5vh;}
+  }
+  
+  /* Standard syntax */
+  @keyframes toggle {
+    from {top: -5vh;}
+    to {top: 0.5vh;}
+  }
+}
+
+.template {
+  height: 100vh;
+}
+
+.main1 {
+  background: linear-gradient(to right bottom, rgb(201, 240, 243), rgb(255, 255, 255));
+}
+
+.text1 {
+  background: linear-gradient(to right bottom, rgb(201, 240, 243), rgb(255, 255, 255));
+}
+
+.img1 {
+  background: linear-gradient(to right bottom, rgb(201, 240, 243), rgb(255, 255, 255));
+}
+
+.movie1 {
+  height:100vh;
+  max-width:100vw;
+  overflow:hidden;
+  background: linear-gradient(to right bottom, #FAF9DB, #CEEBE0);
+}
+
+svg {
+  /*   transform:scale(0); */
+  transition:1s ease-in-out;
+  position:absolute;
+}
+
+.animate {
+  /*   animation: blossom 2s ease-in-out 0s infinite alternate forwards running; */
+  /*   animation-name: blossom-1; */
+  /*   animation-duration: 2s; */
+  animation-iteration-count:infinite;
+  animation-fill-mode:forwards;
+  animation-direction:alternate;
+}
+
+@keyframes blossom-0 {
+  0% {
+      transform:scale(0) rotate(0);
+  }
+  100% {
+    transform:scale(0.5) rotate(30deg);
+  }
+}
+@keyframes blossom-1 {
+  0% {
+      transform:scale(0) rotate(0);
+  }
+  100% {
+    transform:scale(0.45) rotate(60deg);
+  }
+}
+@keyframes blossom-2 {
+  0% {
+      transform:scale(0) rotate(0);
+  }
+  100% {
+    transform:scale(0.4) rotate(45deg);
+  }
+}
+@keyframes blossom-3 {
+  0% {
+      transform:scale(0) rotate(0);
+  }
+  100% {
+    transform:scale(0.36) rotate(30deg);
+  }
+}
+@keyframes blossom-4 {
+  0% {
+      transform:scale(0) rotate(0);
+  }
+  100% {
+    transform:scale(0.3) rotate(45deg);
+  }
+}
+@keyframes blossom-5 {
+  0% {
+      transform:scale(0) rotate(0);
+  }
+  100% {
+    transform:scale(0.25) rotate(60deg);
+  }
+}
+@keyframes blossom-6 {
+  0% {
+      transform:scale(0) rotate(0);
+  }
+  100% {
+    transform:scale(0.2) rotate(30deg);
+  }
+}
+@keyframes blossom-7 {
+  0% {
+      transform:scale(0) rotate(0);
+  }
+  100% {
+    transform:scale(0.15) rotate(60deg);
+  }
+}
+@keyframes blossom-8 {
+  0% {
+      transform:scale(0) rotate(0);
+  }
+  100% {
+    transform:scale(0.1) rotate(45deg);
+  }
+}
+@keyframes blossom-9 {
+  0% {
+      transform:scale(0) rotate(0);
+  }
+  100% {
+    transform:scale(0.33) rotate(30deg);
+  }
+}
+
+/* visibility: hidden; */
+
+
+/*
+font-family: 'Jua', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Song Myung', serif;
+font-family: 'Black Han Sans', sans-serif;
+font-family: 'Hi Melody', cursive;
+font-family: 'Cute Font', cursive;
+font-family: 'Nanum Pen Script', cursive;
+
+*/
+
+
+
+
+/*
+img {
+  width: 100%;
+}
+
+
+
+.landing {
+  position: relative;
+  background: url('./img/landing_1920.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-top: -24px;
+  margin-bottom: -110px;
+}
+
+.landing-inner {
+  padding-top: 80px;
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-form {
+  opacity: 0.9;
+}
+
+.latest-profiles-img {
+  width: 40px;
+  height: 40px;
+}
+
+.form-control::placeholder {
+  color: #bbb !important;
+}
+
+*/

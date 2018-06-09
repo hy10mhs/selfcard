@@ -9,7 +9,7 @@ const CardSchema = new Schema({
   },
   handle: {
     type: String,
-    required: true,
+    // required: true,
     max: 40
   },
   page: [
@@ -17,7 +17,11 @@ const CardSchema = new Schema({
       type1: String,
       type2: String,
       text: [String],
-      img: [String],
+      img: [{
+        url: String,
+        name: String,
+        hash: String
+      }],
       movie: [String]
     }
   ],

@@ -7,19 +7,19 @@ module.exports = function validateCardDetailInput(data) {
   data.handle = !isEmpty(data.handle) ? data.handle : '';
 
   if(!Validator.isLowercase(data.handle)) {
-    errors.handle = 'Handle must be lowercase';
+    errors.handle = 'Card address must be lowercase';
   }
 
   if(!Validator.isAlphanumeric(data.handle)) {
-    errors.handle = 'Handle must be Alphabet or Number';
+    errors.handle = 'Card address must be Alphabet or Number';
   }
 
   if(!Validator.isLength(data.handle, { min: 2, max: 40 })) {
-    errors.handle = 'Handle needs to between 2 and 40 characters';
+    errors.handle = 'Card address needs to between 2 and 40 characters';
   }
 
   if(Validator.isEmpty(data.handle)) {
-    errors.handle = 'Handle field is required';
+    errors.handle = 'Card address field is required';
   }
 
   // TODO nav (numofbtn = btn lenght)

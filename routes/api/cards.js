@@ -67,6 +67,7 @@ router.post(
   '/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
+    let newCard = req.body;
     const { errors, isValid } = validateCardInput(req.body);
 
     // Check Validation
@@ -75,65 +76,76 @@ router.post(
     }
 
     // Get fields
-    const cardFields = {};
-    cardFields.user = req.user.id;
-    if(req.body.handle) cardFields.handle = req.body.handle;
+    // const cardFields = {};
+    // cardFields.user = req.user.id;
+    // if(req.body.handle) cardFields.handle = req.body.handle;
 
-    cardFields.detail = {};
-    cardFields.detail.nav = {};
-    cardFields.detail.backmusic = {};
-    cardFields.detail.scroll = {};
-    cardFields.detail.isopen = {};
+    // cardFields.detail = {};
+    // cardFields.detail.nav = {};
+    // cardFields.detail.backmusic = {};
+    // cardFields.detail.scroll = {};
+    // cardFields.detail.isopen = {};
 
-    if(req.body.nav_isuse) cardFields.detail.nav.isuse = req.body.nav_isuse;
-    if(req.body.nav_numofbtn) cardFields.detail.nav.numofbtn = req.body.nav_numofbtn;
-    const btn = [];
-    const btn1 = {};
-    const btn2 = {};
-    const btn3 = {};
-    const btn4 = {};
-    const btn5 = {};
-    if(req.body.nav_btn1_src) btn1.src = req.body.nav_btn1_src;
-    if(req.body.nav_btn1_pageidx) btn1.pageidx = req.body.nav_btn1_pageidx;
-    if(req.body.nav_btn2_src) btn2.src = req.body.nav_btn2_src;
-    if(req.body.nav_btn2_pageidx) btn2.pageidx = req.body.nav_btn2_pageidx;
-    if(req.body.nav_btn3_src) btn3.src = req.body.nav_btn3_src;
-    if(req.body.nav_btn3_pageidx) btn3.pageidx = req.body.nav_btn3_pageidx;
-    if(req.body.nav_btn4_src) btn4.src = req.body.nav_btn4_src;
-    if(req.body.nav_btn4_pageidx) btn4.pageidx = req.body.nav_btn4_pageidx;
-    if(req.body.nav_btn5_src) btn5.src = req.body.nav_btn5_src;
-    if(req.body.nav_btn5_pageidx) btn5.pageidx = req.body.nav_btn5_pageidx;
-    btn.push(btn1,btn2,btn3,btn4,btn5);
-    cardFields.detail.nav.btn = btn;
+    // if(req.body.nav_isuse) cardFields.detail.nav.isuse = req.body.nav_isuse;
+    // if(req.body.nav_numofbtn) cardFields.detail.nav.numofbtn = req.body.nav_numofbtn;
+    // const btn = [];
+    // const btn1 = {};
+    // const btn2 = {};
+    // const btn3 = {};
+    // const btn4 = {};
+    // const btn5 = {};
+    // if(req.body.nav_btn1_src) btn1.src = req.body.nav_btn1_src;
+    // if(req.body.nav_btn1_pageidx) btn1.pageidx = req.body.nav_btn1_pageidx;
+    // if(req.body.nav_btn2_src) btn2.src = req.body.nav_btn2_src;
+    // if(req.body.nav_btn2_pageidx) btn2.pageidx = req.body.nav_btn2_pageidx;
+    // if(req.body.nav_btn3_src) btn3.src = req.body.nav_btn3_src;
+    // if(req.body.nav_btn3_pageidx) btn3.pageidx = req.body.nav_btn3_pageidx;
+    // if(req.body.nav_btn4_src) btn4.src = req.body.nav_btn4_src;
+    // if(req.body.nav_btn4_pageidx) btn4.pageidx = req.body.nav_btn4_pageidx;
+    // if(req.body.nav_btn5_src) btn5.src = req.body.nav_btn5_src;
+    // if(req.body.nav_btn5_pageidx) btn5.pageidx = req.body.nav_btn5_pageidx;
+    // btn.push(btn1,btn2,btn3,btn4,btn5);
+    // cardFields.detail.nav.btn = btn;
 
-    if(req.body.backmusic_isuse) cardFields.detail.backmusic.isuse = req.body.backmusic_isuse;
-    if(req.body.backmusic_src) cardFields.detail.backmusic.src = req.body.backmusic_src;
-    if(req.body.backmusic_isrepeated) cardFields.detail.backmusic.isrepeated = req.body.backmusic_isrepeated;
+    // if(req.body.backmusic_isuse) cardFields.detail.backmusic.isuse = req.body.backmusic_isuse;
+    // if(req.body.backmusic_src) cardFields.detail.backmusic.src = req.body.backmusic_src;
+    // if(req.body.backmusic_isrepeated) cardFields.detail.backmusic.isrepeated = req.body.backmusic_isrepeated;
 
-    if(req.body.scroll_isuse) cardFields.detail.scroll.isuse = req.body.scroll_isuse;
-    if(req.body.scroll_typeofscroll) cardFields.detail.scroll.typeofscroll = req.body.scroll_typeofscroll;
+    // if(req.body.scroll_isuse) cardFields.detail.scroll.isuse = req.body.scroll_isuse;
+    // if(req.body.scroll_typeofscroll) cardFields.detail.scroll.typeofscroll = req.body.scroll_typeofscroll;
 
-    if(req.body.isopen_isuse) cardFields.detail.isopen.isuse = req.body.isopen_isuse;
-
+    // if(req.body.isopen_isuse) cardFields.detail.isopen.isuse = req.body.isopen_isuse;
     Card.findOne({
-      user: req.user.id,
       handle: req.body.handle
     })
-      .then(card => {
-        if(card) {
-          // Update
-          Card.findOneAndUpdate({
-            user: req.user.id,
-            handle: req.body.handle
-          },
-          { $set: cardFields },
-          { new: true})
-            .then(card => res.json(card));
-        } else {
-          // Create
-          new Card(cardFields).save().then(card => res.json(card));
-        }
-      });
+    .then(card => {
+      if(card) {
+        return res.status(400).json({handle: 'Card address is already used by someone'});
+      } else {
+        Card.findOne({
+          user: req.user.id,
+          handle: req.body.handle
+        })
+          .then(card => {
+            if(card) {
+              // Update
+              Card.findOneAndUpdate({
+                user: req.user.id,
+                handle: req.body.handle
+              },
+              { $set: cardFields },
+              { new: true})
+                .then(card => res.json(card));
+            } else {
+              // Create
+              newCard.user = req.user.id;
+              console.log(newCard)
+              new Card(newCard).save().then(card => res.json(card));
+            }
+          });
+      }
+    })
+    .catch(err => res.json(err));
   }
 );
 
