@@ -92,21 +92,21 @@ class Img1 extends React.Component {
             <div className="template img1">
                 <div className="w3-row">
                     <div className="w3-col s6">
-                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[0]) && !isEmpty(page.img[0].url) ? (<img src={page.img[0].url} style={{width: '100%'}} onClick={this.onImgClick} />) : 'Upload Image1'}</div>
-                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[2]) && !isEmpty(page.img[2].url) ? (<img src={page.img[2].url} style={{width: '100%'}} onClick={this.onImgClick} />) : 'Upload Image3'}</div>
-                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[4]) && !isEmpty(page.img[4].url) ? (<img src={page.img[4].url} style={{width: '100%'}} onClick={this.onImgClick} />) : 'Upload Image5'}</div>
+                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[0]) && !isEmpty(page.img[0].url) ? (<img src={page.img[0].url} style={{width: '100%'}} onClick={this.onImgClick} alt="Image1"/>) : 'Upload Image1'}</div>
+                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[2]) && !isEmpty(page.img[2].url) ? (<img src={page.img[2].url} style={{width: '100%'}} onClick={this.onImgClick} alt="Image3"/>) : 'Upload Image3'}</div>
+                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[4]) && !isEmpty(page.img[4].url) ? (<img src={page.img[4].url} style={{width: '100%'}} onClick={this.onImgClick} alt="Image5"/>) : 'Upload Image5'}</div>
                     </div>
                     <div className="w3-col s6">
-                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[1]) && !isEmpty(page.img[1].url) ? (<img src={page.img[1].url} style={{width: '100%'}} onClick={this.onImgClick} />) : 'Upload Image2'}</div>
-                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[3]) && !isEmpty(page.img[3].url) ? (<img src={page.img[3].url} style={{width: '100%'}} onClick={this.onImgClick} />) : 'Upload Image4'}</div>
-                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[5]) && !isEmpty(page.img[5].url) ? (<img src={page.img[5].url} style={{width: '100%'}} onClick={this.onImgClick} />) : 'Upload Image6'}</div>
+                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[1]) && !isEmpty(page.img[1].url) ? (<img src={page.img[1].url} style={{width: '100%'}} onClick={this.onImgClick} alt="Image2"/>) : 'Upload Image2'}</div>
+                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[3]) && !isEmpty(page.img[3].url) ? (<img src={page.img[3].url} style={{width: '100%'}} onClick={this.onImgClick} alt="Image4"/>) : 'Upload Image4'}</div>
+                    <div style={{border: '1px solid #777', width: '100%', height: '33.33333vh', overflow: 'hidden'}}> { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[5]) && !isEmpty(page.img[5].url) ? (<img src={page.img[5].url} style={{width: '100%'}} onClick={this.onImgClick} alt="Image6"/>) : 'Upload Image6'}</div>
                     </div>
                 </div>
 
                 <div id="modal01" className="w3-modal w3-black" style={{paddingTop: '0'}} onClick={this.onModalCloseClick}>
                     <span className="w3-button w3-black w3-xlarge w3-display-topright">×</span>
                     <div className="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-                    <img id="img01" className="w3-image" />
+                    <img id="img01" className="w3-image" alt="modalimg"/>
                     <p id="caption"></p>
                     </div>
                 </div>

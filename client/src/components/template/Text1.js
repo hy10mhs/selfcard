@@ -74,28 +74,28 @@ class Text1 extends React.Component {
             { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[0]) ? null : <div style={{height: '100vh', width: '100%', position: 'absolute'}}><div className="text-center" style={{paddingTop: '45vh'}}>Upload Image1</div></div>}
             <div className="row">
                 <div className="col text-center" style={{marginTop: '55vh'}}>
-                <h1 style={{fontFamily: "\'Jua\', sans-serif"}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[0]) ? page.text[0] : 'Insert text1'}</h1>
+                <h1 style={{fontFamily: "'Jua', sans-serif"}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[0]) ? page.text[0] : 'Insert text1'}</h1>
                 </div>
             </div>
             <hr style={{width: '70%', margin: 'auto', paddingBottom: '3px'}}/>
             <div className="row">
                 <div className="col text-center">
-                <span style={{fontFamily: "\'Jua\', sans-serif"}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[1]) ? page.text[1] : 'Insert text2'}</span>
+                <span style={{fontFamily: "'Jua', sans-serif"}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[1]) ? page.text[1] : 'Insert text2'}</span>
                 </div>
             </div>
             <div className="row">
                 <div className="col text-center">
-                <span style={{fontFamily: "\'Jua\', sans-serif"}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[2]) ? page.text[2] : 'Insert text3'}</span>
+                <span style={{fontFamily: "'Jua', sans-serif"}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[2]) ? page.text[2] : 'Insert text3'}</span>
                 </div>
             </div>
             <div className="row">
                 <div className="col text-center">
-                <span style={{fontFamily: "\'Jua\', sans-serif"}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[3]) ? page.text[3] : 'Insert text4'}</span>
+                <span style={{fontFamily: "'Jua', sans-serif"}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[3]) ? page.text[3] : 'Insert text4'}</span>
                 </div>
             </div>
             <div className="row">
                 <div className="col text-center">
-                <span style={{fontFamily: "\'Jua\', sans-serif"}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[4]) ? page.text[4] : 'Insert text5'}</span>
+                <span style={{fontFamily: "'Jua', sans-serif"}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[4]) ? page.text[4] : 'Insert text5'}</span>
                 </div>
             </div>
         </div>

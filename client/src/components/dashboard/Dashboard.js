@@ -57,7 +57,7 @@ class Dashboard extends React.Component {
 }
 
 Dashboard.propTypes = {
-  getCards: PropTypes.func.required,
+  getCards: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   card: PropTypes.object.isRequired
 };

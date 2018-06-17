@@ -74,7 +74,7 @@ class Main1 extends React.Component {
             { !isEmpty(page) && !isEmpty(page.img) && !isEmpty(page.img[0]) ? null : <div style={{height: '100vh', width: '100%', position: 'absolute'}}><div className="text-center" style={{paddingTop: '45vh'}}>Upload Image1</div></div>}
             <div className="row">
                 <div className="col text-center" style={{marginTop: '55vh'}}>
-                <h1 style={{fontFamily: "\'Song Myung\', serif", color: '#ffffff'}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[0]) ? page.text[0] : 'Insert text1'}</h1>
+                <h1 style={{fontFamily: "'Song Myung', serif", color: '#ffffff'}}>{ !isEmpty(page) && !isEmpty(page.text) && !isEmpty(page.text[0]) ? page.text[0] : 'Insert text1'}</h1>
                 </div>
             </div>
             <hr style={{width: '70%', margin: 'auto', paddingBottom: '3px'}}/>

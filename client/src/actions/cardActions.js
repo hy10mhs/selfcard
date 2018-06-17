@@ -1,4 +1,4 @@
-import { GET_ERRORS, CARD_LOADING, CARDS_LOADING, GET_CARD, SET_CARD, DELETE_CARD, GET_CARDS, CLEAR_CARD, CLEAR_CARDS, INIT_PAGE, ADD_PAGE, DEL_PAGE, NEXT_PAGE, PREV_PAGE } from './types';
+import { GET_ERRORS, CARD_LOADING, CARDS_LOADING, GET_CARD, SET_CARD, GET_CARDS, CLEAR_CARD, CLEAR_CARDS, INIT_PAGE, ADD_PAGE, DEL_PAGE, NEXT_PAGE, PREV_PAGE } from './types';
 import axios from 'axios';
 
 // Card Loading
@@ -59,8 +59,6 @@ export const saveCard = (cardData, history) => dispatch => {
       })
     );
 }
-
-// Delete Card
 
 // Get Cards
 export const getCards = () => dispatch => {
