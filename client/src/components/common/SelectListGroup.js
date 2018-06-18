@@ -15,11 +15,11 @@ const SelectListGroup = ({
 
     if( typeof upperSel !== 'string' ) {
         selectOptions = options.map(option => (
-            <option key={option.label} label={option.label} value={option.value} />
+            <option key={option.label} label={option.label} value={option.value}>{option.label}</option>
         ));
     } else {
         selectOptions = options.map(option => option.upperSel === upperSel ? (
-            <option key={option.label} label={option.label} value={option.value} />
+            <option key={option.label} label={option.label} value={option.value}>{option.label}</option>
         ): null);
     }
 
