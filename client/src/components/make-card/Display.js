@@ -20,35 +20,61 @@ class Display extends React.Component {
     const { card } = this.props.card;
     let displayContent;
 
+    // 2018.06.18 After
+    const components = {
+      'Main1': Main1,
+      'Main2': Main2,
+      'Text1': Text1,
+      'Text2': Text2,
+      'Img1': Img1,
+      'Img2': Img2,
+      'Movie1': Movie1,
+      'Movie2': Movie2,
+      'Comment1': Comment1,
+      'Comment2': Comment2,
+      'Map1': Map1,
+      'Map2': Map2
+    };
+
+    let SpecificComp = null;
+
     if( card && card.page && !isEmpty(card.pageidx) && card.page[card.pageidx] && card.page[card.pageidx].type1 && card.page[card.pageidx].type2 ) {
-      if(card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Main1') {
-        displayContent = <Main1 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Main2' ) {
-        displayContent = <Main2 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Text1' ) {
-        displayContent = <Text1 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Text2' ) {
-        displayContent = <Text2 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Img1' ) {
-        displayContent = <Img1 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Img2' ) {
-        displayContent = <Img2 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Movie1' ) {
-        displayContent = <Movie1 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Movie2' ) {
-        displayContent = <Movie2 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Comment1' ) {
-        displayContent = <Comment1 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Comment2' ) {
-        displayContent = <Comment2 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Map1' ) {
-        displayContent = <Map1 />;
-      } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Map2' ) {
-        displayContent = <Map2 />;
-      }
+      SpecificComp = components[card.page[card.pageidx].type1 + card.page[card.pageidx].type2];
+      displayContent = <SpecificComp />;
     } else {
       displayContent = <div style={{fontSize: '25px', paddingTop: '43vh', textAlign: 'center'}}>Select Main/Sub Type</div>;
     }
+
+    // 2018.06.18 Before
+    // if( card && card.page && !isEmpty(card.pageidx) && card.page[card.pageidx] && card.page[card.pageidx].type1 && card.page[card.pageidx].type2 ) {
+    //   if(card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Main1') {
+    //     displayContent = <Main1 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Main2' ) {
+    //     displayContent = <Main2 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Text1' ) {
+    //     displayContent = <Text1 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Text2' ) {
+    //     displayContent = <Text2 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Img1' ) {
+    //     displayContent = <Img1 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Img2' ) {
+    //     displayContent = <Img2 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Movie1' ) {
+    //     displayContent = <Movie1 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Movie2' ) {
+    //     displayContent = <Movie2 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Comment1' ) {
+    //     displayContent = <Comment1 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Comment2' ) {
+    //     displayContent = <Comment2 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Map1' ) {
+    //     displayContent = <Map1 />;
+    //   } else if ( card.page[card.pageidx].type1 + card.page[card.pageidx].type2 === 'Map2' ) {
+    //     displayContent = <Map2 />;
+    //   }
+    // } else {
+    //   displayContent = <div style={{fontSize: '25px', paddingTop: '43vh', textAlign: 'center'}}>Select Main/Sub Type</div>;
+    // }
 
     return (
       <div id="display">

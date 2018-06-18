@@ -6,13 +6,13 @@ import "react-alice-carousel/lib/alice-carousel.css";
 class CardSlide extends Component {
     render() {
         const { cards } = this.props;
-        let content = cards.map(card => (
-            <div style={{width: '100%', height: '35vh'}}>
+        let content = cards.map((card, index) => (
+            <div key={index} style={{width: '100%', height: '35vh'}}>
                 <div style={{height: '80%'}}>
                     <iframe scrolling="no" width="100%" height="100%" src={"/card/"+card.handle} title="slideitem"></iframe>
                 </div>
-                <div className="btn" style={{wordWrap: 'break-word'}} onClick={() => window.location=`http://localhost:3000/card/${card.handle}` }>
-                    http://localhost:3000/card/{card.handle}
+                <div className="btn" style={{wordWrap: 'break-word'}} onClick={() => window.location=`http://selfcard.herokuapp.com/card/${card.handle}` }>
+                    http://selfcard.herokuapp.com/card/{card.handle}
                 </div>
             </div>));
         return (
@@ -26,7 +26,7 @@ class CardSlide extends Component {
 }
 
 CardSlide.propTypes = {
-    cards: PropTypes.object.isRequired
+    cards: PropTypes.array.isRequired
 };
 
 export default CardSlide;

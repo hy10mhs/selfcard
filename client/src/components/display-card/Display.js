@@ -33,35 +33,62 @@ class Display extends Component {
 
         let content = [];
 
+        // 2018.06.18 After
+        const components = {
+            'Main1': Main1,
+            'Main2': Main2,
+            'Text1': Text1,
+            'Text2': Text2,
+            'Img1': Img1,
+            'Img2': Img2,
+            'Movie1': Movie1,
+            'Movie2': Movie2,
+            'Comment1': Comment1,
+            'Comment2': Comment2,
+            'Map1': Map1,
+            'Map2': Map2
+        };
+
+        let SpecificComp = null;
+
         if( card && card.page ) {
             for(let i=0; i < card.page.length; i++) {
-                if(card.page[i].type1 + card.page[i].type2 === 'Main1') {
-                    content.push(<Main1 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Main2' ) {
-                    content.push(<Main2 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Text1' ) {
-                    content.push(<Text1 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Text2' ) {
-                    content.push(<Text2 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Img1' ) {
-                    content.push(<Img1 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Img2' ) {
-                    content.push(<Img2 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Movie1' ) {
-                    content.push(<Movie1 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Movie2' ) {
-                    content.push(<Movie2 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Comment1' ) {
-                    content.push(<Comment1 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Comment2' ) {
-                    content.push(<Comment2 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Map1' ) {
-                    content.push(<Map1 key={ i } pagedata={card.page[i]}/>);
-                } else if ( card.page[i].type1 + card.page[i].type2 === 'Map2' ) {
-                    content.push(<Map2 key={ i } pagedata={card.page[i]}/>);
-                }                
+                SpecificComp = components[card.page[i].type1 + card.page[i].type2];
+                content.push(<SpecificComp key={ i } pagedata={card.page[i]}/>);
+                SpecificComp = null;
             }
         }
+
+        // 2018.06.18 Before
+        // if( card && card.page ) {
+        //     for(let i=0; i < card.page.length; i++) {
+        //         if(card.page[i].type1 + card.page[i].type2 === 'Main1') {
+        //             content.push(<Main1 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Main2' ) {
+        //             content.push(<Main2 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Text1' ) {
+        //             content.push(<Text1 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Text2' ) {
+        //             content.push(<Text2 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Img1' ) {
+        //             content.push(<Img1 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Img2' ) {
+        //             content.push(<Img2 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Movie1' ) {
+        //             content.push(<Movie1 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Movie2' ) {
+        //             content.push(<Movie2 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Comment1' ) {
+        //             content.push(<Comment1 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Comment2' ) {
+        //             content.push(<Comment2 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Map1' ) {
+        //             content.push(<Map1 key={ i } pagedata={card.page[i]}/>);
+        //         } else if ( card.page[i].type1 + card.page[i].type2 === 'Map2' ) {
+        //             content.push(<Map2 key={ i } pagedata={card.page[i]}/>);
+        //         }                
+        //     }
+        // }
 
         return (
             <div>

@@ -72,12 +72,12 @@ body {
   
   .palletewrap-hidden {
     top: 100vh;
-    transition: top 2s;
+    transition: top 1s;
   }
   
   .palletewrap-overlap {
     top: 0;
-    transition: top 2s;
+    transition: top 1s;
   }
   
   #main #pallete-toggle {
