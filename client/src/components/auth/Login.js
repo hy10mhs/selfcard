@@ -75,7 +75,7 @@ class Login extends React.Component {
                   value={ this.state.password }
                   onChange={ this.onChange }
                 />
-                <input type="submit" className="btn btn-info btn-block mt-4" />
+                <input type="submit" value="Submit" className="btn btn-info btn-block mt-4" />
               </form>
             </div>
           </div>
