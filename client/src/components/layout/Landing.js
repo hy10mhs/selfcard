@@ -23,7 +23,7 @@ class Landing extends React.Component {
                   MERN Stack
                 </p>
                 <hr />
-                <Link className="btn btn-lg btn-info mr-2" to="/register">SingUp</Link>
+                <Link className="btn btn-lg btn-info mr-2" to="/register">SignUp</Link>
                 <Link className="btn btn-lg btn-light" to="/login">Login</Link>
               </div>
             </div>
